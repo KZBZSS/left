@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>小情书</title>
+
+<style type="text/css">
+@font-face {
+	font-family: digit;
+	src: url('digital-7_mono.ttf') format("truetype");
+}
+</style>
+
+<link href="default.css"  rel="stylesheet">
+<script src="jquery.js"></script>
+<script src="garden.js"></script>
+<script src="functions.js"></script>
+
+</head>
+
+<body>
+
+<div id="mainDiv">
+	<div id="content">
+		<div id="code">
+			<span class="comments">何其有幸</span><br />
+			<span class="space"/><span class="comments">*2019—04-18,</span><br />
+			<span class="space"/><span class="comments">*2019-04-29.</span><br />
+			<span class="space"/><span class="comments">*/</span><br />
+			<span class="comments">我有个故事想讲给姑娘听 </span><br />
+			<span class="comments">不过故事很长哦</span><br />
+			<span class="comments">姑娘可能会花费好长好长时间才能听完</span><br />
+			<span class="comments">不知道姑娘准备好了吗？</span><br />
+			<span class="comments">不管以后如何</span><br />
+			<span class="comments">故事的开头便是我喜欢你</span><br />
+			<span class="comments">有些人认识一天就可以恋爱</span><br />
+			<span class="comments">有些人认识几年却不敢表白</span><br />
+			<span class="comments">有些人在一起很多天很多年却没有真的在一起</span><br />
+			<span class="comments">有些人兜兜转转还是走到地老天荒</span><br />
+			<span class="comments">遇见对的人很重要</span><br />
+			<span class="comments">遇见你之后 </span><br />
+			<span class="comments">忽然想雇条船儿去见你</span><br />
+			<span class="comments">沿着河流慢慢的写一纸故事</span><br />
+			<span class="comments">将沿河的桃花和风雨画下</span><br />
+			<span class="comments">等我遇见你后</span><br />
+			<span class="comments">就能送你满满一篮子的故事</span><br />
+			<span class="comments">我还要在折一张阔些的荷叶包</span><br />
+			<span class="comments">一片月光夹在篮子里把所有的欢天喜地都赠与你</span><br />
+			<span class="comments">大多数时候都想变成一个高傲的诗人</span><br />
+			<span class="comments">写风写雨写星星写月亮写爱恨情仇写岁月悠悠</span><br />
+			<span class="comments">顺便再写写你写写你写写你</span><br />
+			<span class="comments">作为一个工科男</span><br />
+			<span class="comments">有时候真的不喜欢用大家都爱用的烂俗句子</span><br />
+			<span class="comments">但是不知道为什么遇见你之后</span><br />
+			<span class="comments">忽然觉得温山暖水都不及姑娘眉眼半分</span><br />
+			<span class="comments">我想躺在床上看书</span><br />
+			<span class="comments">和你在床上打滚</span><br />
+			<span class="comments">滚下床，一起跌在软绵绵的地毯上</span><br />
+			<span class="comments">滚啊滚啊滚到客厅</span><br />
+			<span class="comments">懒洋洋地靠着沙发</span><br />
+			<span class="comments">手里抱着靠枕和零食</span><br />
+			<span class="comments">钻进我大大地怀里。</span><br />
+			<span class="comments">-</span><br />
+			<br>
+			<br>
+			我希望夏天来时<br />
+			姑娘也一起到来;<br />
+		</div>
+		<div id="loveHeart">
+			<canvas id="garden"></canvas>
+			<div id="words">
+				<div id="messages">
+					遇见姑娘的第
+					<div id="elapseClock"></div>
+				</div>
+				<div id="loveu">姑娘是为山河故人<br>
+					春风化雨入我红尘<br/>
+					<div class="signature"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+var offsetX = $("#loveHeart").width() / 2;
+var offsetY = $("#loveHeart").height() / 2 - 55;
+var together = new Date();
+together.setFullYear(2019, 3, 17);
+together.setHours(17);
+together.setMinutes(55);
+together.setSeconds(0);
+together.setMilliseconds(0);
+
+if (!document.createElement('canvas').getContext) {
+	var msg = document.createElement("div");
+	msg.id = "errorMsg";
+	msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+	document.body.appendChild(msg);
+	$("#code").css("display", "none")
+	$("#copyright").css("position", "absolute");
+	$("#copyright").css("bottom", "10px");
+	document.execCommand("stop");
+} else {
+	setTimeout(function () {
+		startHeartAnimation();
+	}, 5000);
+
+	timeElapse(together);
+	setInterval(function () {
+		timeElapse(together);
+	}, 500);
+
+	adjustCodePosition();
+	$("#code").typewriter();
+}
+</script>
+<div style="text-align:center;clear:both"></div>
+</body>
+</html>
